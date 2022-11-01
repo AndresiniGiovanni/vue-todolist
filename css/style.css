@@ -1,0 +1,42 @@
+body {
+  background-color: #433989;
+}
+
+.myinput {
+  border-radius: 10px;
+}
+
+.mycontainer {
+  width: 15%;
+  margin: 0 auto;
+}
+
+.mybtn {
+  width: 10rem;
+  margin-top: 10px;
+  margin-left: 4rem;
+}
+
+.mybutton {
+  background-color: #433989;
+  border: 0px;
+}
+
+.mycheck {
+  color: white;
+}
+
+.big-font {
+  font-size: 1.5rem;
+}
+
+.my-container {
+  height: 300px;
+  width: 400px;
+  border-radius: 15px;
+  margin-top: 50px;
+}
+.my-ul {
+  font-size: 20px;
+  line-height: 2.5rem;
+}

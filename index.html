@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.41/dist/vue.global.min.js"></script>
+    <title>Todolist</title>
+  </head>
+  <body>
+    <div id="app">
+      <h3 class="text-center text-white mt-5">My TaskList</h3>
+
+      <div class="d-flex justify-content-center flex-column mycontainer mt-5">
+        <input
+          class="myinput bg-transparent"
+          type="text"
+          placeholder="Inserisci un elemento"
+          @keyup.enter="addElement"
+          v-model="newTask.text"
+        />
+
+        <button class="btn btn-primary mybtn" @click="addElement">
+          Aggiungi alla lista
+        </button>
+      </div>
+
+      <div class="text-white text-center mt-4 big-font" v-if="hasError">
+        Inserisci una parola con almeno 2 caratteri.
+      </div>
+
+      <div class="container d-flex justify-content-center pt-5 my-container">
+        <ul class="my-ul">
+          <li
+            v-for="(item,index) in list"
+            :key="index"
+            class="text-white list-unstyled"
+          >
+            <button class="mybutton" @click="removeTask">
+              <i class="fa-solid fa-circle-minus mycheck"></i>
+            </button>
+            <span>{{item.text}}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>
